@@ -14,9 +14,9 @@
 
 4. Install Plugins. Launch vim and run 
 
-`$ :PluginInstall`
+   `$ :PluginInstall`
 
 5. Or to install from command line:
 
-`$ vim +PluginInstall +qall`
+   `$ vim +PluginInstall +qall`
 
