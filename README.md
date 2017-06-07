@@ -12,7 +12,11 @@
 
    `$ cp .vimrc ~/home/your_user/`
 
-4. Install Plugins. Launch vim and run :PluginInstall
+4. Install Plugins. Launch vim and run 
 
-5. Or to install from command line: vim +PluginInstall +qall
+`$ :PluginInstall`
+
+5. Or to install from command line:
+
+`$ vim +PluginInstall +qall`
 
