@@ -17,6 +17,9 @@ Plugin 'valloric/youcompleteme'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'sirver/ultisnips'
 Plugin 'grep.vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'klen/python-mode'
+Plugin 'chase/vim-ansible-yaml'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -40,19 +43,21 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 syntax enable
+" Vim Solarized
 set background=dark
-colorscheme solarized
+" colorscheme solarized
+let g:solarized_termcolors=256
 set mouse=a
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_python_checkers = ['pylint', 'flake8', 'python']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
@@ -74,3 +79,12 @@ let g:NERDCommentEmptyLines = 1
 
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
+
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
+
+" Enable python 3 syntax checking
+" let g:pymode_python = 'python3'
+let g:pymode_options_colorcolumn = 0
+let g:pymode_indent = 1
+let g:pymode_doc = 1
