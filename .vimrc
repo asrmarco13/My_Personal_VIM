@@ -4,6 +4,7 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
@@ -15,11 +16,14 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'valloric/youcompleteme'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'sirver/ultisnips'
 Plugin 'grep.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'klen/python-mode'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'tpope/vim-surround'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'ekalinin/dockerfile.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -43,12 +47,13 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 syntax enable
+
 " Vim Solarized
 set background=dark
+
 " colorscheme solarized
 let g:solarized_termcolors=256
 set mouse=a
-
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -88,3 +93,9 @@ let g:ycm_server_log_level = 'debug'
 let g:pymode_options_colorcolumn = 0
 let g:pymode_indent = 1
 let g:pymode_doc = 1
+
+" Markdown enable concealing
+set conceallevel=2
+
+" Wrap git commit message
+au FileType gitcommit setlocal tw=72
