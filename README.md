@@ -4,7 +4,7 @@ VIM (Vi IMproved) is an extended version of the vi editor, with many additional 
 
 1. Clone repository:
 
-   `$ git clone https://github.com/asrmarco13/My_Personal_VIM.git`
+   `$ git clone git@github.com:asrmarco13/My_Personal_VIM.git`
 
 2. Copy vim folder in your home directory:
 
