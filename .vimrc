@@ -24,6 +24,11 @@ Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'ekalinin/dockerfile.vim'
+Plugin 'elzr/vim-json'
+Plugin 'hashivim/vim-terraform'
+Plugin 'juliosueiras/vim-terraform-completion'
+Plugin 'vim-airline/vim-airline'
+Plugin 'tpope/vim-abolish'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -96,6 +101,13 @@ let g:pymode_doc = 1
 
 " Markdown enable concealing
 set conceallevel=2
+
+" Terraform
+" Allow vim-terraform to align settings automatically with Tabularize
+let g:terraform_align=1
+" Allow vim-terraform to automatically format *.tf and *.tfvars files 
+"with terraform fmt. You can also do this manually with the :TerraformFmt command.
+let g:terraform_fmt_on_save=1
 
 " Wrap git commit message
 au FileType gitcommit setlocal tw=72
